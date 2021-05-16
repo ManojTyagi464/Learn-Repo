@@ -1,0 +1,11 @@
+#!/bin/bash
+for i in `cat /tmp/volume_info`
+do
+volstatus=`aws ec2 describe-volumes-modifications --volume-ids $i | grep ModificationState | awk '{print $2}' |  sed 's/\"//g;s/\,//g'`
+if [ $volstatus == "optimizing" ]
+then 
+echo "Volume  $i conversion is in progress"
+fi
+echo "Volume  $i Conversion is Not required or completed"
+done
+
