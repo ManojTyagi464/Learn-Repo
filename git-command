@@ -35,3 +35,5 @@ git branch  ### To display all brances
 git branch feature1 ### create a new branch with name feature1
 git checkout feature1 ### To switch to feature1 branch 
 git merge feature1 ### Feature1 branch will be merged with master
+git ls-tree --name-only HEAD  ### command will show all files which are commited right now
+git ls-tree --name-only -r <697442ac80428124d27afa69b574da45dbe58d4b> ### command will show all files which are commited at particular commit it
